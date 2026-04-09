@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --background: #f6f0e7;
+  --background-secondary: #efe7d9;
+  --panel: #fcf8f1;
+  --panel-muted: #f3ebde;
+  --panel-strong: #fffaf3;
+  --foreground: #2f261f;
+  --muted-foreground: #74695f;
+  --border: #d8cdbf;
+  --border-strong: #c9baa7;
+  --accent: #6d7b5a;
+  --accent-strong: #576246;
+  --accent-soft: #e7ece1;
+  --taupe: #a58a72;
+  --success-foreground: #536345;
+  --warning-foreground: #8f6b3d;
+  --danger-foreground: #91523d;
+  --ring: rgba(109, 123, 90, 0.35);
+  --shadow-color: rgba(63, 51, 39, 0.18);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(180deg, #f8f3ea 0%, #f1e9dc 100%);
+  color: var(--foreground);
+  font-feature-settings:
+    "ss01" 1,
+    "cv03" 1,
+    "cv11" 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(109, 123, 90, 0.18);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.03em;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[30px] border bg-[var(--panel)] shadow-panel;
+  }
+
+  .panel-muted {
+    @apply rounded-[28px] border bg-[var(--panel-muted)] shadow-soft;
+  }
+
+  .section-kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--muted-foreground)];
+  }
+}
