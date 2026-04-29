@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { handleStripeWebhook } from '../webhooks/stripeWebhook';
+import { handleStripeWebhook } from '../controllers/dashboardController';
 
 const router = Router();
 
